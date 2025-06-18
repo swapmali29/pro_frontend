@@ -19,7 +19,7 @@ export const ProductList = () => {
   }, []);
 
   const fetchProducts = () => {
-    axios.get('http://localhost:3001/products')
+    axios.get('https://pro-backend-ahba.onrender.com/products')
       .then(res => setProducts(res.data));
   };
 
@@ -27,7 +27,7 @@ export const ProductList = () => {
     // e.preventDefault();
     console.log(id);
 
-    axios.delete(`http://localhost:3001/products/${id}`).then(() => {
+    axios.delete(`https://pro-backend-ahba.onrender.com/products/${id}`).then(() => {
       setProducts(products.filter(pro => pro.id !== id));
       alert('do you want delete this product')
     });

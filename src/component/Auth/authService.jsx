@@ -10,7 +10,7 @@ const useUserDetails = () => {
 
 
   useEffect(() => {
-    axios.get('http://localhost:3001/details')
+    axios.get('https://pro-backend-ahba.onrender.com/details')
       .then(response => {
         setUsers(response.data);
         const fetchedEmails = response.data.map(user => user.email.toLowerCase());

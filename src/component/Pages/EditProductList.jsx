@@ -22,7 +22,7 @@ export const EditProductList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/products/${id}`).then(res => {
+    axios.get(`https://pro-backend-ahba.onrender.com/products/${id}`).then(res => {
       setFormData(res.data);
     });
 
@@ -44,7 +44,7 @@ export const EditProductList = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submitted!")
-    axios.put(`http://localhost:3001/products/${id}`, formData).then(() => {
+    axios.put(`https://pro-backend-ahba.onrender.com/products/${id}`, formData).then(() => {
       toast.success('Product updated successfully!');
       navigate('/');
     });

@@ -38,7 +38,7 @@ export const Register = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		if (validate()) {
-			axios.post('http://localhost:3001/details', formData).then(() => {
+			axios.post('https://pro-backend-ahba.onrender.com/details', formData).then(() => {
 				toast.success('Employee added successfully!');
 				navigate('/login');
 			});

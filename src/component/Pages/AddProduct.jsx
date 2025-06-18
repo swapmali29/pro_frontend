@@ -29,7 +29,7 @@ export const AddProduct = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        axios.post(`http://localhost:3001/products`, formData).then(() => {
+        axios.post(`https://pro-backend-ahba.onrender.com/products`, formData).then(() => {
             toast.success('Product added successfully!');
             navigate('/');
         });
