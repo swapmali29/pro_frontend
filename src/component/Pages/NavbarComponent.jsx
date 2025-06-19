@@ -12,7 +12,6 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap';
-import useUserDetails from '../Auth/AuthService';
 
 export const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
