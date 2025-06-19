@@ -2,23 +2,16 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import {
-	Button,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	FormFeedback,
-	Card,
-	CardBody,
-	CardTitle,
-} from 'reactstrap';
+import useUserDetails from './authService';
+// import useUserDetails from './AuthService';
 
 export const Register = () => {
 
 	const [formData, setFormData] = useState({ email: '', password: '', role: '', username: '' });
 	const [errors, setErrors] = useState({});
 	const navigate = useNavigate();
+		const { emails, passwords, users } = useUserDetails();
+
 
 	const validate = () => {
 		const newErrors = {};
@@ -27,6 +20,19 @@ export const Register = () => {
 		else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
 		if (!formData.password) newErrors.password = 'Password is required';
 		if (!formData.role) newErrors.role = 'Role is required';
+		
+
+		const normalizedEmail = formData.email.trim().toLowerCase();
+		// const normalizedPassword = inputPassword;
+
+		const matchedUser = users.find(
+			user =>
+				user.email.toLowerCase() === normalizedEmail 
+		);
+
+		if (matchedUser) {
+				newErrors.email = 'Email alreday exits';
+		}
 
 		setErrors(newErrors);
 		return Object.keys(newErrors).length === 0;
@@ -38,7 +44,7 @@ export const Register = () => {
 	const handleSubmit = e => {
 		e.preventDefault();
 		if (validate()) {
-			axios.post('https://pro-backend-ahba.onrender.com/details', formData).then(() => {
+			axios.post('http://localhost:3001/details', formData).then(() => {
 				toast.success('Employee added successfully!');
 				navigate('/login');
 			});
@@ -50,10 +56,9 @@ export const Register = () => {
 	return (
 		<div style={{ display: 'flex', height: '95vh', alignItems: 'center', justifyContent: 'center' }}>
 			<div className="login-container" id="container">
-				<div className="form-container sign-up-container">
+				<div className="form-container register-container">
 					<form onSubmit={handleSubmit}>
-						<h1>Create Account</h1>
-						<span>or use your email for registration</span>
+						<h1 style={{ fontSize: '34px', marginBottom: '18px' }}>Create Account</h1>
 						<input type="text" placeholder="Username" name='username' value={formData.username} onChange={handleChange} />
 						{errors.username && (<p style={{ margin: "0", color: "red" }}>{errors.username}</p>)}
 
