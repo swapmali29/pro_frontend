@@ -54,7 +54,8 @@ export const Register = () => {
 
 
 	return (
-		<div style={{ display: 'flex', height: '95vh', alignItems: 'center', justifyContent: 'center' }}>
+		<div>
+		<div className='desktop' style={{ display: 'flex', height: '95vh', alignItems: 'center', justifyContent: 'center' }}>
 			<div className="login-container" id="container">
 				<div className="form-container register-container">
 					<form onSubmit={handleSubmit}>
@@ -93,6 +94,31 @@ export const Register = () => {
 				</div>
 			</div>
 
+		</div>
+
+		<div className='mobile' style={{padding:"0 13px"}}>
+			<form onSubmit={handleSubmit}>
+						<h1 style={{ fontSize: '34px', marginBottom: '18px' }}>Create Account</h1>
+						<input type="text" placeholder="Username" name='username' value={formData.username} onChange={handleChange} />
+						{errors.username && (<p style={{ margin: "0", color: "red" }}>{errors.username}</p>)}
+
+						<input type="email" placeholder="Email" name='email' value={formData.email} onChange={handleChange} />
+						{errors.email && (<p style={{ margin: "0", color: "red" }}>{errors.email}</p>)}
+
+						<input type="password" placeholder="Password" name='password' value={formData.password} onChange={handleChange} />
+						{errors.password && (<p style={{ margin: "0", color: "red" }}>{errors.password}</p>)}
+
+						<select name="role" onChange={handleChange} value={formData.role}>
+							<option value="">Select Role</option>
+							<option value="admin">Admin</option>
+							<option value="user">User</option>
+						</select>
+						{errors.role && (<p style={{ margin: "0", color: "red" }}>{errors.role}</p>)}
+						{/* <input type="text" placeholder="Role (Admin/User)" name='role' value={formData.role} onChange={handleChange} /> */}
+						<button type='submit'>Sign Up</button>
+						<p style={{margin: '7px 0', textAlign : 'center'}}>Already have account <span> <Link to={`/login`} style={{color: '#bb3535', textAlign : 'center'}}>click here </Link></span></p>
+					</form>
+		</div>
 		</div>
 	)
 }

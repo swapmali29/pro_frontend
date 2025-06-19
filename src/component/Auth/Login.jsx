@@ -54,7 +54,8 @@ export const Login = () => {
 
 
 	return (
-		<div style={{ display: 'flex', height: '95vh', alignItems: 'center', justifyContent: 'center' }}>
+		<div style={{height: '96vh', position : "relative"}}>
+		<div className='desktop' style={{ display: 'flex', height: '95vh', alignItems: 'center', justifyContent: 'center' }}>
 			<div className="login-container" id="container">
 
 				<div className="form-container sign-in-container">
@@ -81,6 +82,20 @@ export const Login = () => {
 				</div>
 			</div>
 
+		</div>
+
+			<div className='mobile'>
+							<form onSubmit={handleLogin}>
+						<h1 style={{ fontSize: '32px', marginBottom: '18px' }}>Product Management</h1>
+						<input type="email" placeholder="Email" name='email' value={inputEmail} onChange={(e) => setInputEmail(e.target.value)} />
+						<input type="password" placeholder="Password" name='password' value={inputPassword} onChange={(e) => setInputPassword(e.target.value)} />
+
+						<button type='submit'>Sign In</button>
+						<p style={{margin: '7px 0', textAlign : 'center'}}>Don't have account <span> <Link to={`/sign-up`} style={{color: '#bb3535', textAlign : 'center'}}>click here </Link></span></p>
+
+						{message && <p>{message}</p>}
+					</form>
+			</div>
 		</div>
 	)
 }
