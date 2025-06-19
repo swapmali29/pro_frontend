@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import useUserDetails from './AuthService';
+import useUserDetails from './authService';
 
 export const Login = () => {
 	// const [emails, setEmails] = useState([]);          // Email list from JSON
