@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { EditProductList } from './component/Pages/EditProductList';
 import { Register } from './component/Auth/Register';
-import PrivateRoute from './component/Auth/PrivateRoute';
+// import PrivateRoute from './component/Auth/PrivateRoute';
 import PublicRoute from './component/Auth/publicRoute';
 import { AddProduct } from './component/Pages/AddProduct';
 
