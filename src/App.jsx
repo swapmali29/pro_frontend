@@ -2,7 +2,7 @@
 import './App.css';
 import { NavbarComponent } from './component/Pages/NavbarComponent';
 import { ProductList } from './component/Pages/ProductList';
-import { Login } from './component/Auth/login';
+import { Login } from './component/Auth/Login';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
