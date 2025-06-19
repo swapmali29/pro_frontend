@@ -47,8 +47,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #bb3535;
+	background-color: #bb3535;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -161,7 +161,7 @@ input, select {
 }
 
 .overlay {
-	background: #71717A;
+	background: #bb3535;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
 	/* background: linear-gradient(to right, #FF4B2B, #FF416C); */
 	background-repeat: no-repeat;
@@ -357,4 +357,10 @@ footer a {
 		color: #fff;
 	}
 	}
+}
+
+
+.overlay_opacity{
+	opacity: 0.3;
+	cursor: not-allowed !important;
 }
