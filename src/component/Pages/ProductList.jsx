@@ -39,7 +39,7 @@ export const ProductList = () => {
       <div className="row">
         {products.map(pro => (
           <div className="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3" key={pro.id}>
-            <div className="product">
+            <div className={`product ${pro.tag == "out of stock" ? 'overlay_opacity' : ''}`}>
               {pro.images != "" && (
                 <img src={pro.images} alt={pro.title} />)}
               {pro.images === "" && (
