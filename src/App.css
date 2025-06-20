@@ -373,6 +373,11 @@ footer a {
 	display: none;
 }
 
+.btn-dark{
+	background-color: #bb3535 !important;
+	border: none !important;
+}
+
 @media (max-width:600px){
 .desktop{
 	display: none !important;

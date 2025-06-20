@@ -17,7 +17,12 @@
 .container .product-item .product img {
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+    transition: 0.7s;
+
+    &:hover{
+        transform: scale(1.3);
+    }
 }
 
 .container .product-item .product .icons .icon {
