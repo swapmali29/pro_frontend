@@ -16,7 +16,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 export const EditProductList = () => {
-  const [formData, setFormData] = useState({ title: '', price: '', images: ''  });
+  const [formData, setFormData] = useState({ title: '', price: '', images: '' , tag : ''});
   const [errors, setErrors] = useState({});
   const { id } = useParams();
   const navigate = useNavigate();
@@ -88,6 +88,17 @@ export const EditProductList = () => {
                 id="price"
                 name="price"
                 value={formData.price}
+                onChange={handleChange}
+              />
+            </FormGroup>
+
+             <FormGroup>
+              <Label for="tag">Tag</Label>
+              <Input
+                type="text"
+                id="teg"
+                name="tag"
+                value={formData.tag}
                 onChange={handleChange}
               />
             </FormGroup>
